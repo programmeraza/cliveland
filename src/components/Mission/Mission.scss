@@ -1,0 +1,45 @@
+.mission {
+    padding: 160px 0;
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 64px;
+        padding: 80px 55px;
+        background: #FFFFFF;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(241, 250, 255, 1) 100%);
+
+        h3 {
+            color: #007BC2;
+            font-size: clamp(1.25rem, 1.146rem + 0.44vw, 1.5rem);
+        }
+
+        .mission__text {
+            color: #007BC2;
+            font-size: clamp(2rem, 1.793rem + 0.88vw, 2.5rem);
+            font-weight: 500;
+            line-height: 50px;
+            display: flex;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                line-height: 40px;
+            }
+
+            @media (max-width: 425px) {
+                line-height: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 50px 30px;
+        }
+
+        @media (max-width: 425px) {
+            padding: 40px 0px;
+        }
+    }
+}

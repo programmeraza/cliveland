@@ -1,0 +1,273 @@
+{
+  "header": {
+    "nav": {
+      "about": "Biz haqimizda",
+      "advantages": "Afzalliklar",
+      "vacancies": "Bo'sh ish o'rinlari",
+      "contacts": "Aloqa",
+      "apply": "Ariza berish"
+    },
+    "search": "Bo'limlar bo'yicha qidirish"
+  },
+  "hero": {
+    "title": "O'zbekistonda jahon darajasidagi loyihaga qo'shiling",
+    "subtitle": "CAU Hospital - Cleveland Clinic standartlari bo'yicha ishlaydigan mintaqadagi birinchi klinika.",
+    "searchPlaceholder": "Bo'limlar bo'yicha qidirish",
+    "searchButton": "Qidirish"
+  },
+  "departments": {
+    "cardiology": "Kardiologiya",
+    "oncology": "Onkologiya",
+    "pediatrics": "Pediatriya",
+    "neurology": "Nevrologiya",
+    "ophthalmology": "Oftalmologiya",
+    "dentistry": "Stomatologiya",
+    "surgery": "Xirurgiya",
+    "diagnostics": "Diagnostika",
+    "gastroenterology": "Gastroenterologiya",
+    "endocrinology": "Endokrinologiya",
+    "physiotherapy": "Fizioterapiya",
+    "rehabilitation": "Reabilitatsiya"
+  },
+  "footer": {
+    "phone": "Telefon: +998-71-200-05-22",
+    "email": "Email:",
+    "emailLink": "hr.pm@cauhospital.com",
+    "address": {
+      "line1": "111221, O'zbekiston,",
+      "line2": "Toshkent shahri, Milliy bog ko'chasi, 264"
+    },
+    "copyright": "Copyright 2025 Social Akfa Medline. Barcha huquqlar himoyalangan."
+  },
+  "modal": {
+    "title": "Zahiralarga qo'shiling",
+    "description": {
+      "info": "Biz quyidagi bo'limlar uchun \"Shifokor (ixtisosligi bo'yicha)\" lavozimi uchun nomzodlarning kutish ro'yxatini shakllantirmoqdamiz. Kadrlar zaxirasiga ro'yxatdan o'tish uchun quyidagi shaklni to'ldiring.",
+      "details": "CAU Hospital kutish ro'yxatiga ariza berish bizning ishga yollash jamoamizga siz bilan bog'lanish va ish qidirishda yordam berish, shuningdek siz uchun mos imkoniyatlarni aniqlash imkonini beradi. Kadrlar zaxirasiga ro'yxatdan o'tish uchun quyidagi shaklni to'ldiring."
+    },
+    "form": {
+      "vacancy": "Bo'sh ish o'rni *",
+      "vacancyPlaceholder": "Bo'sh ish o'rnini tanlang",
+      "resume": "Iltimos, rezyumeni yuklang *",
+      "resumeUpload": "Rezyumeni yuboring",
+      "resumeSize": "2 MB dan ko'p bo'lmasligi. PDF, DOC, DOCX",
+      "name": "Ism *",
+      "namePlaceholder": "Sizning ismingiz",
+      "surname": "Familiya *",
+      "surnamePlaceholder": "Sizning familiyangiz",
+      "phone": "Telefon raqami *",
+      "phonePlaceholder": "Sizning telefon raqamingiz",
+      "email": "Email *",
+      "emailPlaceholder": "Sizning email manzilingiz",
+      "country": "Yashash mamlakati *",
+      "countryPlaceholder": "O'zbekiston",
+      "education": "Ta'lim darajasi *",
+      "educationPlaceholder": "Darajani tanlang",
+      "interests": "Qiziqish sohasi *",
+      "interestsPlaceholder": "Qiziqishni tanlang",
+      "agree": "Ha, men roziman",
+      "privacyPolicy": "maxfiylik siyosati bilan",
+      "submit": "Yuborish",
+      "error": "Iltimos, barcha majburiy maydonlarni to'ldiring!",
+      "success": {
+        "title": "Rahmat sizga",
+        "message": "Sizning shaklingiz yuborildi. Email xabarnomalarini kuting.",
+        "button": "Yaxshi"
+      }
+    },
+    "education": {
+      "bachelor": "Bakalavr",
+      "master": "Magistr",
+      "doctorate": "Fan doktori"
+    },
+    "interests": {
+      "football": "Futbol",
+      "chess": "Shaxmat",
+      "drawing": "Rasm chizish"
+    },
+    "vacancies": {
+      "therapist": "Terapevt",
+      "surgeon": "Xirurg",
+      "pediatrician": "Pediatr",
+      "urologist": "Urolog"
+    }
+  },
+  "pages": {
+    "policy": {
+      "title": "Maxfiylik siyosati",
+      "content": "Saytdagi shaklni to'ldirib va arizamni yuborish orqali men Central Asian University MChJga mening shaxsiy ma'lumotlarimni, jumladan familiya, ism, otasining ismi, aloqa ma'lumotlari, ta'lim, ish tajribasi va anketa va ilova qilingan hujjatlarda ko'rsatgan boshqa ma'lumotlarimni qayta ishlashga rozilik beraman.",
+      "content2": "Mening shaxsiy ma'lumotlarimni qayta ishlash vakansiya uchun mening nomzodligimni ko'rib chiqish, suhbatlar tashkil etish va ehtimoliy mehnat shartnomasi tuzish maqsadida, O'zbekiston Respublikasi 02.07.2019 yildagi ZRU-547-sonli \"Shaxsiy ma'lumotlar to'g'risida\" Qonuni talablariga muvofiq amalga oshiriladi.",
+      "content3": "Rozilik kadrlar tanlash tartib-qoidalari tugaguncha amal qiladi, mehnat shartnomasi tuzilgan taqdirda esa - butun mehnat munosabatlari davri va qonun hujjatlari bilan belgilangan hujjatlar saqlash muddati davomida amal qiladi."
+    },
+    "chevron": {
+      "defaultTitle": "Bo'limni tanlang",
+      "defaultDescription": "Bo'sh ish o'rinlarini ko'rish uchun bo'limni tanlang.",
+      "descriptionPrefix": "Biz uchun jahon darajasidagi tibbiy yordam ko'rsatamiz"
+    }
+  },
+  "components": {
+    "mission": {
+      "title": "Missiya",
+      "text": "Cleveland Clinic jahon klinik standartlarini, amaliyotga yo'naltirilgan ta'lim va ilm-fanni birlashtirish, bemorlar, shifokorlar va talabalar bugungi kunda kelajak tibbiyotiga kirish imkoniyatiga ega bo'lishlari uchun."
+    },
+    "our": {
+      "title": "Bizni tanlash sabablari",
+      "subtitle": "Biz CAU Hospital bilan birga xalqaro standartlar bo'yicha ishlashga va rivojlanishga tayyor mutaxassislarni qidirayapmiz.",
+      "cards": {
+        "infrastructure": {
+          "title": "Zamonaviy infratuzilma",
+          "description": "Yuqori texnologiyali xalqaro yechimlar va raqamli tibbiyotga kirish."
+        },
+        "mentors": {
+          "title": "Xalqaro murabbiylar",
+          "description": "Cleveland Clinic ekspertlari va yetakchi CAU professorlaridan yordam va o'qitish."
+        },
+        "internships": {
+          "title": "Chet elda amaliyot",
+          "description": "Hamkor klinikalarda amaliyot o'tash va tajriba almashish imkoniyati."
+        },
+        "growth": {
+          "title": "O'sish va rivojlanish",
+          "description": "O'qitish dasturlari, rezidentura va doimiy kasbiy yangilanish."
+        }
+      },
+      "button": "Kutish ro'yxatiga ariza berish"
+    },
+    "text": {
+      "content": "Central Asian University Hospital (CAU Hospital) - mintaqadagi eng yirik tibbiy loyihalardan biri. Kasalxona Central Asian University kengaytirilgan kampusi qismiga aylanadi va davolash, ta'lim va tadqiqotlarni yagona jahon darajasidagi ekotizimga birlashtiradi."
+    },
+    "list": {
+      "title": "Shifokor lavozimlari uchun nomzodlarning kutish ro'yxati bo'limlar uchun:",
+      "warning": "Zahiraga kiritish taklif emas va ish bilan ta'minlashni kafolatlamaydi. Ba'zi asosiy rollar uchun ochilishdan oldin erta yollash mumkin.",
+      "description": "Biz CAU Hospital oldindan ishga tushirish uchun mutaxassislar zahirasini shakllantirmoqdamiz. Ariza berish sizni tegishli yo'nalish bo'yicha kutish ro'yxatiga qo'shadi. Arazalar klinika ishga tushirilgunga qadar va yollash bosqichlari ochilganda ko'rib chiqiladi.",
+      "button": "Kutish ro'yxatiga ariza berish",
+      "departments": {
+        "anesthesiology": "Anesteziologiya bo'limi",
+        "cardiology": "Kardiologiya bo'limi",
+        "neurology": "Nevrologiya bo'limi",
+        "oncology": "Onkologiya bo'limi",
+        "pediatrics": "Pediatriya bo'limi",
+        "surgery": "Xirurgiya bo'limi",
+        "therapy": "Terapiya bo'limi",
+        "urology": "Urologiya bo'limi",
+        "gynecology": "Ginekologiya bo'limi",
+        "dermatology": "Dermatologiya bo'limi",
+        "gastroenterology": "Gastroenterologiya bo'limi",
+        "endocrinology": "Endokrinologiya bo'limi",
+        "ophthalmology": "Oftalmologiya bo'limi",
+        "traumatology": "Travmatologiya bo'limi"
+      }
+    },
+    "contact": {
+      "title": "Savollaringiz bormi? Biz bilan bog'laning!",
+      "cards": {
+        "email": {
+          "title": "Bizga yozing",
+          "description": "24/7, har kuni",
+          "email": "hr.pm@cauhospital.org"
+        },
+        "address": {
+          "title": "Sizni bu yerda ko'rishdan xursandmiz",
+          "address": "111221, O'zbekiston, Toshkent shahri, Milliy bog ko'chasi, 264"
+        },
+        "social": {
+          "title": "Biz ijtimoiy tarmoqlardamiz",
+          "description": "Foydali kontent har doim shu yerda"
+        }
+      },
+      "form": {
+        "title": "Bizga xabar yuboring",
+        "name": "Sizning ismingiz",
+        "namePlaceholder": "Sizning ismingiz",
+        "email": "Elektron pochta",
+        "emailPlaceholder": "Sizning elektron pochtangiz",
+        "message": "Sizning xabaringiz",
+        "messagePlaceholder": "Sizning xabaringiz",
+        "submit": "Yuborish",
+        "sending": "Yuborilmoqda...",
+        "success": "Xabar muvaffaqiyatli yuborildi!",
+        "error": "Xabarni yuborish muvaffaqiyatsiz bo'ldi. Qayta urinib ko'ring.",
+        "validationError": "Iltimos, barcha maydonlarni to'ldiring!"
+      }
+    },
+    "experience": {
+      "title": "Tajriba markazi",
+      "subtitle": "CAU Hospital uchta asosiy yo'nalishni birlashtirgan tajriba markazi sifatida yaratilmoqda:",
+      "cards": {
+        "treatment": {
+          "title": "Xalqaro davolash",
+          "description": "Kasalxona Cleveland Clinic standartlari bo'yicha ishlaydi: dalillarga asoslangan protokollar, multidissiplinar yondashuv, raqamli tibbiyot va bemor xavfsizligi madaniyati."
+        },
+        "education": {
+          "title": "Klinik muhitda ta'lim",
+          "description": "CAU Hospital talabalar, rezidentlar va shifokorlar uchun baza bo'ladi. Bu yerda ular amaliyotga yo'naltirilgan ta'lim, murabbiylik va zamonaviy simulyatsiya markazlariga kirish oladilar."
+        },
+        "research": {
+          "title": "Ilmiy tadqiqotlar va innovatsiyalar",
+          "description": "Kasalxonada ilmiy tadqiqotlar va ilg'or texnologiyalarni joriy etish uchun muhit yaratiladi. Xalqaro hamkorlar bilan qo'shma loyihalar O'zbekistonning global fanda rolini oshiradi."
+        }
+      },
+      "conclusion": "Bu O'zbekiston va butun Markaziy Osiyo uchun sog'liqni saqlash sifati uchun yangi standartlarni belgilaydigan jahon darajasidagi ekotizimdir."
+    },
+    "area": {
+      "cards": {
+        "area": {
+          "value": "91 500 m²",
+          "description": "Kasalxonaning umumiy maydoni, qurilish 2027 yil oxiriga qadar ikki bosqichda yakunlanadi."
+        },
+        "beds": {
+          "value": "120 ko'cha",
+          "description": "Bemorlar uchun zamonaviy sharoitlar, shu jumladan 90 o'tkir va 30 ixtisoslashtirilgan."
+        },
+        "capacity": {
+          "value": "269 000",
+          "description": "Yiliga bemorlar - kasalxonaning maksimal quvvati"
+        }
+      }
+    },
+    "partner": {
+      "title": "Cleveland Clinic bilan hamkorlik",
+      "description1": "CAU Hospital 100 yildan ortiq tarixga ega dunyoning yetakchi tibbiy markazlaridan biri Cleveland Clinic bilan strategik hamkorlikda yaratilmoqda.",
+      "description2": "Bizning kasalxonamiz Cleveland Clinic Connected dasturiga kiradi, bu xalqaro davolash protokollarini joriy etish, shifokorlarni jahon standartlari bo'yicha o'qitish va bilim va innovatsiyalar global tarmog'iga kirishni kafolatlaydi.",
+      "description3": "Mutaxassislar uchun bu darhol jahon tibbiyot standarti bo'yicha qurilgan klinikada ishlash uchun noyob imkoniyatdir.",
+      "button": "Cleveland Clinic veb-saytida batafsil ma'lumot"
+    },
+    "logoflex": {
+      "title": "Hamkorlar"
+    },
+    "clinic": {
+      "title": "CAU Hospital haqida | Cleveland Clinic Connected",
+      "subtitle": "Central Asian University Hospital — yangi avlod universitet kasalxonasi.",
+      "description": "Xalqaro arxitektura byurosi HKS (AQSh) tomonidan loyihalashtirilgan ko'p tarmoqli klinik va ta'lim markazi. Healing Environment falsafasi amalga oshirildi: shaxsiy palatalar, tabiiy yorug'likka kirish, yashil zonalari va bemor va xodim oqimlari uchun intuitiv logistik. Loyihaviy quvvat - yiliga 269 000 gacha rejalashtirilgan bemorlar.",
+      "construction": "Qurilish boshlanishi",
+      "constructionDate": "18 sen 2025",
+      "opening": "Rejalashtirilgan ochilish",
+      "openingYear": "2027"
+    },
+    "accordion": {
+      "title": "Tanlov bosqichlari",
+      "steps": {
+        "screening": {
+          "title": "HR va yollash menejeri tomonidan ariza skriningi",
+          "text": "Arizani topshirgandan so'ng, uni HR va bo'lim rahbari tekshiradi. Bu bosqichda ta'lim, ish tajribasi, ko'nikmalar va motivatsiyaga muvofiqligi baholanadi."
+        },
+        "interview": {
+          "title": "Suhbat (HR va kasbiy)",
+          "text": "HR va ixtisoslashgan mutaxassis bilan suhbat o'tkaziladi. Klinik lavozimlar uchun qo'shimcha bosqich - holat echish yoki simulyatsiyada ishtirok etish ko'zda tutilgan."
+        },
+        "verification": {
+          "title": "Tavsiylar va hujjatlar/sertifikatlarni tekshirish",
+          "text": "Biz hujjatlar, litsenziyalar, diplomlar va sertifikatlarning haqiqiyligini sinchiklab tekshiramiz va nomzodning tavsiya beruvchilari bilan bog'lanamiz."
+        },
+        "decision": {
+          "title": "Komissiya qarori va Job Offer",
+          "text": "Ariza HR va bo'lim rahbarlari kirgan komissiyaga taqdim etiladi. Bosqichlarni muvaffaqiyatli o'tgandan so'ng nomzod taklif oladi."
+        },
+        "onboarding": {
+          "title": "Onboarding",
+          "text": "Ishga joylashish, sifat va xavfsizlik standartlari bo'yicha kirish treningi, shuningdek murabbiy tayinlash."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.clinic {
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 32px;
+        h1 {
+            color: #000;
+            font-size: clamp(2rem, 1.689rem + 1.33vw, 2.75rem);
+        }
+    }
+
+    &__flex {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+        img {
+            width: 100%;
+            max-width: 628px;
+        }
+
+        @media (max-width: 1190px) {
+            flex-direction: column;
+        }
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 48px;
+        img {
+            width: 100%;
+            max-width: 628px;
+            @media (max-width: 425px) {
+                height: 255px;
+            }
+        }
+        @media (max-width: 768px) {
+            gap: 20px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 24px;
+        margin-bottom: 115px;
+        h2 {
+            font-size: clamp(1.625rem, 1.366rem + 1.1vw, 2.25rem);
+            color: #000;
+        }
+        p {
+            color: #555555;
+            font-size: clamp(1rem, 0.896rem + 0.44vw, 1.25rem);
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 60px;
+        }
+        @media (max-width: 425px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__calc {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 160px;
+        width: 100%;
+        @media (max-width: 1190px) {
+            gap: 100px;
+        }
+        @media (max-width: 768px) {
+            gap: 50px;
+        }
+        @media (max-width: 425px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 50px;
+        }
+    }
+
+    &__calc-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 4px;
+        p {
+            color: #1E1E1E;
+            font-size: 16px;
+        }
+        h3 {
+            color: #007BC2;
+            font-size: 32px;
+        }
+    }
+}

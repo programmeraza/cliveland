@@ -1,0 +1,131 @@
+.list {
+    padding: 460px 0 160px 0;
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 32px;
+        width: 100%;
+
+        h1 {
+            font-size: clamp(2rem, 1.689rem + 1.33vw, 2.75rem);
+            color: #000;
+            padding-top: 160px;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 24px;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 38px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 32px;
+
+        p {
+            color: #4A4A4A;
+            font-size: 16px;
+            line-height: 24px;
+            width: 100%;
+            max-width: 850px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 628px;
+        }
+    }
+
+    &__warning {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 20px;
+        background-color: #F1FAFF;
+        width: 100%;
+        max-width: 628px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        p {
+            color: #505050;
+            font-size: 16px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        width: 346px;
+        padding: 15px 0;
+        border: 1px solid #0B8442;
+        border-radius: 5px;
+        background-color: #0B8442;
+        color: #fff;
+        font-size: 16px;
+        transition: all .5s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0f9e50;
+        }
+    }
+
+    &__departments {
+        width: 100%;
+        max-width: 628px;
+        background-color: #FAFAFA;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 28px 16px 16px;
+        overflow-y: auto;
+        max-height: 744px;
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 15px;
+        border-radius: 8px;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #E3E5E5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__name {
+        font-size: 16px;
+        color: #1E1E1E;
+    }
+}
+
+// @media (max-width:) {}

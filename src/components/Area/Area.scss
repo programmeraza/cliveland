@@ -1,0 +1,48 @@
+.area {
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 26px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 24px;
+        padding: 48px 32px;
+        width: 100%;
+        max-width: 410px;
+    }
+
+    &__title1 {
+        font-size: 54px;
+        color: #005688;
+    }
+
+    &__title2 {
+        font-size: 54px;
+        color: #007BC2;
+    }
+
+    &__title3 {
+        font-size: 54px;
+        color: #249C3D;
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        background-color: #BFD5E1;
+    }
+}

@@ -1,0 +1,131 @@
+.accordion-block {
+    background-color: #fff;
+    padding-bottom: 160px;
+
+    h1 {
+        font-size: 44px;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 45px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .MuiAccordion-root {
+        background-color: #fff !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid #7b7b7b;
+        transition: background-color 0.4s ease, border-bottom 0.3s ease;
+
+        &:before {
+            display: none;
+        }
+
+        &.Mui-expanded {
+            background-color: #f1faff !important;
+            border-bottom: none;
+        }
+    }
+
+    .accordion-arrow {
+        width: 25px;
+        height: 25px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: brightness(0) saturate(100%) invert(31%) sepia(96%) saturate(726%) hue-rotate(178deg) brightness(96%) contrast(95%);
+
+        @media (max-width: 768px) {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (max-width: 480px) {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .MuiButtonBase-root {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+
+    .MuiAccordionSummary-root {
+        padding: 22px 0 !important;
+        min-height: unset !important;
+        transition: 0.3s ease;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper {
+        color: #0077c8;
+        transition: transform 0.3s ease;
+    }
+
+    .MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+        transform: rotate(180deg);
+    }
+
+    .MuiSvgIcon-root {
+        width: 28px;
+        height: 28px;
+    }
+
+    .MuiPaper-root {
+        padding: 0 40px;
+    }
+
+    .MuiTypography-root {
+        font-size: 20px;
+        color: #017BC3;
+        font-weight: 600;
+    }
+
+    .MuiAccordionDetails-root {
+        padding: 0 0 22px 0 !important;
+
+        p {
+            color: #232323;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: 8px;
+            width: 100%;
+            max-width: 1125px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .MuiTypography-root {
+            font-size: 18px;
+        }
+
+        .MuiAccordionDetails-root p {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .MuiTypography-root {
+            font-size: 16px;
+        }
+
+        .MuiAccordionDetails-root p {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.blur-text-item {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+}
+
+.blur-text-item.animate {
+  animation: blurTextAnimation 1.2s ease-out forwards;
+}
+
+@keyframes blurTextAnimation {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(5px);
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+

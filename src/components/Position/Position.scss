@@ -1,0 +1,221 @@
+.position {
+    padding-bottom: 40px;
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        gap: 24px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__grid {
+        width: 100%;
+        max-width: 844px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 16px;
+        grid-template-areas:
+            "card1 card1"
+            "card2 card2"
+            "card3 card3"
+            "card4 card4"
+            "card5 card6"
+            "card7 card8"
+            "card9 card9"
+            "card10 card10";
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "card1"
+                "card2"
+                "card3"
+                "card4"
+                "card5"
+                "card6"
+                "card7"
+                "card8"
+                "card9"
+                "card10";
+            gap: 24px;
+        }
+    }
+
+    .card1,
+    .card2,
+    .card3,
+    .card4,
+    .card5,
+    .card6,
+    .card7,
+    .card8,
+    .card9,
+    .card10 {
+        background-color: #FAFAFA;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 16px;
+        width: 100%;
+        max-width: 844px;
+
+        // 🧠 Автоматическая высота
+        height: auto;
+
+        h1 {
+            color: #1E1E1E;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #1E1E1E;
+            font-weight: 600;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            line-height: 24px;
+            font-size: 16px;
+            color: #1E1E1E;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .card1 {
+        grid-area: card1;
+    }
+
+    .card2 {
+        grid-area: card2;
+    }
+
+    .card3 {
+        grid-area: card3;
+    }
+
+    .card4 {
+        grid-area: card4;
+    }
+
+    .card5 {
+        grid-area: card5;
+    }
+
+    .card6 {
+        grid-area: card6;
+    }
+
+    .card7 {
+        grid-area: card7;
+    }
+
+    .card8 {
+        grid-area: card8;
+    }
+
+    .card9 {
+        grid-area: card9;
+    }
+
+    .card10 {
+        grid-area: card10;
+    }
+
+    .card1 {
+        &__content-ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 120px;
+
+            @media (max-width: 768px) {
+                gap: 40px;
+            }
+
+
+        }
+
+        &__ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        &__content {
+            display: none;
+
+            @media (max-width: 425px) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+        }
+    }
+
+    &__btn-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 16px;
+        background-color: #FAFAFA;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 412px;
+
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+    }
+
+    &__btn {
+        width: 380px;
+        padding: 15px 24px;
+        background-color: #007839;
+        border: 1px solid #007839;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: transparent;
+            color: #007839;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}

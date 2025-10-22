@@ -1,0 +1,194 @@
+
+
+.hero {
+    position: relative;
+    width: calc(100% - 40px); 
+    margin: 115px auto 160px auto;
+    border-radius: 10px;
+    overflow: hidden; 
+    height: 650px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url(../../../public/gospital.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        gap: 24px;
+        padding: 300px 60px 60px 60px;
+
+        @media (max-width: 768px) {
+            padding: 224px 16px 16px 16px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 922px;
+        z-index: 1;
+
+        h1 {
+            font-size: clamp(2rem, 1.543rem + 1.95vw, 3.25rem);
+            color: #fff;
+        }
+
+        p {
+            font-size: clamp(1rem, 0.909rem + 0.39vw, 1.25rem);
+            color: #fff;
+            width: 100%;
+            max-width: 594px;
+        }
+
+        @media (max-width: 768px) {
+            gap: 16px;
+        }   
+    }
+
+    &__inp-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        flex-wrap: wrap;
+        position: relative;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    &__inp {
+        position: relative;
+
+        input {
+            width: 418px;
+            padding: 16px 59px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            color: #000;
+            outline: none;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border-color: #4251aa;
+                box-shadow: 0 0 0 3px rgba(66, 81, 170, 0.2);
+            }
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 16px;
+            left: 24px;
+        }
+
+        .hero__dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            z-index: 10;
+            max-height: 220px;
+            overflow-y: auto;
+            animation: fadeIn 0.2s ease;
+
+            &-item {
+                padding: 12px 15px;
+                font-size: 16px;
+                color: #333;
+                cursor: pointer;
+                transition: 0.2s;
+
+                &:hover {
+                    background: #f2f4ff;
+                    color: #4251aa;
+                }
+
+                &.hero__dropdown-empty {
+                    color: #999;
+                    cursor: default;
+                    background: #fafafa;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        width: 128px;
+        padding: 15px 27px;
+        background-color: #007839;
+        border: 1px solid #007839;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        svg {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            background-color: #00592b;
+
+            svg {
+                transform: translateX(3px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+
+        @media (max-width: 425px) {
+            width: 100%;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-5px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+

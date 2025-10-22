@@ -1,0 +1,57 @@
+.partner {
+    padding: 160px 0;
+    background-color: #fff;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        img {
+            width: 100%;
+            max-width: 628px;
+        }
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 48px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+    }
+
+    &__block {
+        padding: 16px;
+        background-color: #F1FAFF;
+        p {
+            color: #005688;
+            font-size: 20px;
+        }
+    }
+
+    &__btn {
+        width: 323px;
+        padding: 15px;
+        background-color: #017BC3;
+        color: #fff;
+        border-radius: 5px;
+        border: 1px solid #017BC3;
+        font-size: 16px;
+        transition: all .5s ease;
+        cursor: pointer;
+        &:hover {
+            background-color: transparent;
+            color: #017BC3;
+        }
+    }
+}
