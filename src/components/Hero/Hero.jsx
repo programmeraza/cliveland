@@ -28,7 +28,6 @@ const Hero = () => {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  // Список отделений [{ru, en}]
   const departments = Object.entries(departmentMap).map(([ru, en]) => ({
     ru,
     en,
@@ -48,10 +47,8 @@ const Hero = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Проверяем, на каком языке пишет пользователь (рус/латиница)
   const isEnglishInput = /^[A-Za-z\s]+$/.test(query);
 
-  // Фильтрация — ищет и по русским, и по английским названиям
   const filtered = departments.filter(
     (dep) =>
       dep.ru.toLowerCase().includes(query.toLowerCase().trim()) ||
@@ -100,7 +97,7 @@ const Hero = () => {
               <input
                 ref={inputRef}
                 type="text"
-                placeholder={t("searchPlaceholder")}
+                placeholder={t("hero.searchPlaceholder")}
                 value={query}
                 onFocus={() => setIsOpen(true)}
                 onChange={(e) => {
@@ -143,7 +140,7 @@ const Hero = () => {
             </div>
 
             <button className="hero__btn" onClick={() => handleSearch(query)}>
-              {t("searchButton")}
+              {t("hero.searchButton")}
             </button>
           </div>
         </div>
