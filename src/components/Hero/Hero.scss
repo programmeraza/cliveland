@@ -148,7 +148,7 @@
         justify-content: center;
         align-items: center;
         gap: 7px;
-        width: 128px;
+        width: 128px;   
         padding: 15px 27px;
         background-color: #007839;
         border: 1px solid #007839;
@@ -158,14 +158,14 @@
         cursor: pointer;
         transition: all 0.3s ease;
 
-        svg {
+        img {
             transition: transform 0.3s ease;
         }
 
         &:hover {
             background-color: #00592b;
 
-            svg {
+            img {
                 transform: translateX(3px);
             }
         }

@@ -1,23 +1,29 @@
-import React from 'react';
-import './Video.scss';
+// Video.jsx
+import React, { useState, useRef } from "react";
+import ReactPlayer from "react-player";
+import { Play } from "lucide-react";
+import "./Video.scss";
 
-const Video = () => {
+const Video = ({ url = "./video.mp4", poster = "./video.png" }) => {
+  const [playing, setPlaying] = useState(false);
+  const playerRef = useRef(null);
+
+  const togglePlay = () => setPlaying(!playing);
+
   return (
-    <>
-      <div className="video">
-        <div className="container">
-          <video
-            width="100%"
-            height="auto"
-            controls
-            poster="./video.png" 
-          >
-            <source src="./video.mp4" type="video/mp4" />
-            Ваш браузер не поддерживает видео.
-          </video>
-        </div>
+      <div className="container">
+    <div className="video-wrapper">
+        <ReactPlayer
+          ref={playerRef}
+          src={url}
+          controls={playing}
+          width="100%"
+          height="100%"
+          light={!playing ? poster : false}
+          onClick={togglePlay}
+        />
       </div>
-    </>
+    </div>
   );
 };
 
