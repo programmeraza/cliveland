@@ -100,7 +100,7 @@ const Hero = () => {
               <input
                 ref={inputRef}
                 type="text"
-                placeholder={t("hero.placeholder")}
+                placeholder={t("searchPlaceholder")}
                 value={query}
                 onFocus={() => setIsOpen(true)}
                 onChange={(e) => {
@@ -127,7 +127,6 @@ const Hero = () => {
                 >
                   {filtered.length > 0 &&
                     filtered.map((dep, index) => {
-                      // Показываем язык в зависимости от того, на каком языке введён запрос
                       const displayText = isEnglishInput ? dep.en : dep.ru;
                       return (
                         <div
@@ -144,7 +143,7 @@ const Hero = () => {
             </div>
 
             <button className="hero__btn" onClick={() => handleSearch(query)}>
-              {t("hero.button")}
+              {t("searchButton")}
             </button>
           </div>
         </div>
