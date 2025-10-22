@@ -6,7 +6,7 @@ import Branch from '../components/Branch/Branch';
 import Position from '../components/Position/Position';
 import Up from '../components/Up/Up';
 import { useTranslation } from 'react-i18next';
-const defaultBackground = "./operation.jpg";
+const defaultBackground = "/operation.jpg";
 
 const ChevronPage = () => {
   const location = useLocation();
