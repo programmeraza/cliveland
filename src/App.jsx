@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.scss'
 import HomePage from './pages/HomePage'
-import ChevronPage from './pages/ChevronPage'
+import VacancyPage from './pages/VacancyPage'
 import ErrorPage from './pages/ErrorPage'
 import PolicyPage from './pages/PolicyPage'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
@@ -13,7 +12,7 @@ function App() {
     <ScrollToTop/>
       <Routes>
         <Route path='/' element={<HomePage/>} />
-        <Route path='/vacancy' element={<ChevronPage/>} />
+        <Route path='/vacancy' element={<VacancyPage/>} />
         <Route path='/policy' element={<PolicyPage/>} />
         <Route path='*' element={<ErrorPage/>} />
       </Routes>

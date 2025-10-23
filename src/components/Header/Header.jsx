@@ -7,6 +7,7 @@ import { FiMenu } from "react-icons/fi";
 import { IoCloseOutline } from "react-icons/io5";
 import ModalForm from "../ModalForm/ModalForm";
 import { useTranslation } from 'react-i18next';
+import LogoHeader from '../../assets/svg/logo.svg'
 
 const Header = () => {
     const location = useLocation();
@@ -44,7 +45,7 @@ const Header = () => {
                 <div className="container">
                     <div className="header__wrapper">
                         <Link to={'/'}>
-                            <img src="./logo.svg" alt="logo" />
+                            <img src={LogoHeader} alt="logo" />
                         </Link>
 
                         <div className="header__nav-flex">
@@ -64,7 +65,7 @@ const Header = () => {
                             <div className={`header__menu ${menuOpen ? 'active' : ''}`}>
                                 <div className="header__menu-top">
                                     <Link to={'/'}>
-                                        <img src="./logo.svg" alt="logo" />
+                                        <img src={LogoHeader} alt="logo" />
                                     </Link>
                                     <button className="header__menu-close" onClick={closeMenu}>
                                         <IoCloseOutline />

@@ -40,6 +40,11 @@
 
         @media (max-width: 425px) {
             padding: 40px 0px;
+            gap: 32px;
         }
+    }
+
+    @media (max-width: 768px) {
+        padding: 100px 0;
     }
 }

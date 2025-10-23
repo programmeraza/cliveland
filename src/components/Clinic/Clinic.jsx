@@ -1,6 +1,8 @@
 import React from 'react'
 import './Clinic.scss'
 import { useTranslation } from 'react-i18next'
+import ClinicBig from '../../assets/img/clinic-big.png'
+import ClinicSmall from '../../assets/img/clinic-small.png'
 
 const Clinic = () => {
     const { t } = useTranslation()
@@ -13,7 +15,7 @@ const Clinic = () => {
                 <h1>{t('components.clinic.title')}</h1>
                 <div className="clinic__flex">
                     <div className="clinic__block">
-                        <img src="./clinic-small.png" alt="" />
+                        <img src={ClinicSmall} alt="" />
                         <div className="clinic__content">
                             <h2>{t('components.clinic.subtitle')}</h2>
                             <p>{t('components.clinic.description')}</p>
@@ -29,7 +31,7 @@ const Clinic = () => {
                             </div>
                         </div>
                     </div>
-                    <img src="./clinic-big.png" alt="" />
+                    <img src={ClinicBig} alt="" />
                 </div>
             </div>
         </div>

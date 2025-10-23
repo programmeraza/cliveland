@@ -2,7 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./Hero.scss";
-
+import Search from '../../assets/svg/search.svg'
+import ArrowSearch from '../../assets/svg/arrow-search.svg'
+import NotFound from '../../assets/img/not-found.png'
+ 
 const departmentMap = {
   "Отделение анестезиологии": "Department of Anesthesiology",
   "Отделение кардиологии": "Department of Cardiology",
@@ -105,7 +108,7 @@ const Hero = () => {
                   setIsOpen(true);
                 }}
               />
-              <img src="./search.svg" alt="search" />
+              <img src={Search} alt="search" />
 
               {isOpen && query && (
                 <div
@@ -113,7 +116,7 @@ const Hero = () => {
                   style={
                     filtered.length === 0
                       ? {
-                        backgroundImage: "url('./not-found.png')",
+                        backgroundImage: `url(${NotFound})`,
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         backgroundSize: "40% auto",
@@ -141,7 +144,7 @@ const Hero = () => {
 
             <button className="hero__btn" onClick={() => handleSearch(query)}>
               {t("hero.searchButton")}
-              <img src="./arrow-search.svg" alt="" />
+              <img src={ArrowSearch} alt="" />
             </button>
           </div>
         </div>

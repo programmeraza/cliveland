@@ -56,7 +56,7 @@
 
 
     .MuiAccordionSummary-root {
-        padding: 22px 0 !important;
+        padding: 16px 0 !important;
         min-height: unset !important;
         transition: 0.3s ease;
     }
@@ -76,7 +76,7 @@
     }
 
     .MuiPaper-root {
-        padding: 0 40px;
+        padding: 0 20px;
     }
 
     .MuiTypography-root {
@@ -93,7 +93,6 @@
             font-weight: 400;
             font-size: 20px;
             line-height: 28px;
-            margin-top: 8px;
             width: 100%;
             max-width: 1125px;
         }

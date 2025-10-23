@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Fade from "@mui/material/Fade";
 import "./Accordion.scss";
 import { useTranslation } from 'react-i18next';
+import ArrowDown from '../../assets/svg/arrow.svg'
 
 export default function Accordion() {
   const { t } = useTranslation();
@@ -64,7 +65,7 @@ export default function Accordion() {
               ]}
             >
               <AccordionSummary
-                expandIcon={<img src="./arrow.svg" alt="arrow" className="accordion-arrow"/>}
+                expandIcon={<img src={ArrowDown} alt="arrow" className="accordion-arrow"/>}
                 aria-controls={`panel${index}-content`}
                 id={`panel${index}-header`}
                 className="accordion-block__summary"

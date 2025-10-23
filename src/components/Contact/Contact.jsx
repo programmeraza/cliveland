@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from 'react-i18next';
+import Twitter from '../../assets/svg/twitter.svg'
+import Instagram from '../../assets/svg/instagram.svg'
+import In from '../../assets/svg/in.svg'
+import Call1 from '../../assets/svg/call1.svg'
+import Call2 from '../../assets/svg/call2.svg'
+import Call3 from '../../assets/svg/call3.svg'
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -56,7 +62,7 @@ const Contact = () => {
             <div className="contact__cards">
               <div className="contact__card">
                 <div className="contact__card-img">
-                  <img src="./call1.svg" alt="" />
+                  <img src={Call1} alt="" />
                 </div>
                 <h3>{t('components.contact.cards.email.title')}</h3>
                 <p>{t('components.contact.cards.email.description')}</p>
@@ -67,7 +73,7 @@ const Contact = () => {
 
               <div className="contact__card">
                 <div className="contact__card-img">
-                  <img src="./call2.svg" alt="" />
+                  <img src={Call2} alt="" />
                 </div>
                 <h3>{t('components.contact.cards.address.title')}</h3>
                 <strong>
@@ -82,19 +88,19 @@ const Contact = () => {
 
               <div className="contact__card">
                 <div className="contact__card-img">
-                  <img src="./call3.svg" alt="" />
+                  <img src={Call3} alt="" />
                 </div>
                 <h3>{t('components.contact.cards.social.title')}</h3>
                 <p>{t('components.contact.cards.social.description')}</p>
                 <div className="contact__icon-flex">
-                  <Link to="#">
-                    <img src="./twitter.svg" alt="" />
+                  <Link to={'https://x.com/?lang=ru'}>
+                    <img src={Twitter} alt="" />
                   </Link>
-                  <Link to="#">
-                    <img src="./in.svg" alt="" />
+                  <Link to={'https://www.linkedin.com/'}>
+                    <img src={In} alt="" />
                   </Link>
-                  <Link to="#">
-                    <img src="./instagram.svg" alt="" />
+                  <Link to={'https://www.instagram.com/'}>
+                    <img src={Instagram} alt="" />
                   </Link>
                 </div>
               </div>
@@ -148,15 +154,12 @@ const Contact = () => {
               </button>
             </form>
 
+
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23969.772147547457!2d69.4211686!3d41.3257962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef716040d8001%3A0xaf24862e6ceb4cb5!2sCAEx%20(Central%20Asian%20Expocenter)!5e0!3m2!1sru!2s!4v1760083867842!5m2!1sru!2s"
-              width="600"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              src="https://yandex.ru/map-widget/v1/?ll=69.427889%2C41.328065&z=16&pt=69.427889,41.328065,pm2rdl"
+              allowFullScreen
             ></iframe>
+
           </div>
         </div>
       </div>

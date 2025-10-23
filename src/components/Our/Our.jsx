@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./Our.scss";
 import ModalForm from "../ModalForm/ModalForm";
 import { useTranslation } from 'react-i18next';
+import Davinci from '../../assets/img/davinci.png'
+import Group from '../../assets/img/group.png'
+import Medic from '../../assets/img/medic.png'
+import Profi from '../../assets/img/profi.png'
 
 const Our = () => {
   const { t } = useTranslation();
@@ -27,7 +31,7 @@ const Our = () => {
             </div>
             <div className="our__cards">
               <div className="our__card">
-                <img src="./davinci.png" alt="" />
+                <img src={Davinci} alt="" />
                 <div className="our__card-content">
                   <h3>
                     {t('components.our.cards.infrastructure.title').split(' ').map((word, index) => (
@@ -43,7 +47,7 @@ const Our = () => {
                 </div>
               </div>
               <div className="our__card">
-                <img src="./group.png" alt="" />
+                <img src={Group} alt="" />
                 <div className="our__card-content">
                   <h3>
                     {t('components.our.cards.mentors.title').split(' ').map((word, index) => (
@@ -59,7 +63,7 @@ const Our = () => {
                 </div>
               </div>
               <div className="our__card">
-                <img src="./profi.png" alt="" />
+                <img src={Profi} alt="" />
                 <div className="our__card-content">
                   <h3>
                     {t('components.our.cards.internships.title').split(' ').map((word, index) => (
@@ -75,7 +79,7 @@ const Our = () => {
                 </div>
               </div>
               <div className="our__card">
-                <img src="./medic.png" alt="" />
+                <img src={Medic} alt="" />
                 <div className="our__card-content">
                   <h3>
                     {t('components.our.cards.growth.title').split(' ').map((word, index) => (

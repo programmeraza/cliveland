@@ -2,6 +2,9 @@ import React from 'react'
 import './Footer.scss'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Tg from '../../assets/svg/tg.svg'
+import Facebook from '../../assets/svg/facebook.svg'
+import Linkedin from '../../assets/svg/linkedin.svg'
 
 const Footer = () => {
     const { t } = useTranslation()
@@ -19,14 +22,14 @@ const Footer = () => {
                             <p>{t('footer.email')} <Link>{t('footer.emailLink')}</Link></p>
                         </div>
                         <div className="footer__icon-flex">
-                            <Link>
-                                <img src="./tg.svg" alt="" />
+                            <Link target='blank' to={'https://web.telegram.org/k/'}>
+                                <img src={Tg} alt="" />
                             </Link>
-                            <Link>
-                                <img src="./facebook.svg" alt="" />
+                            <Link target='blank' to={'https://www.facebook.com/?locale=ru_RU'}>
+                                <img src={Facebook} alt="" />
                             </Link>
-                            <Link>
-                                <img src="./linkedin.svg" alt="" />
+                            <Link target='blank' to={'https://www.linkedin.com/'}>
+                                <img src={Linkedin} alt="" />
                             </Link>
                         </div>
                     </div>

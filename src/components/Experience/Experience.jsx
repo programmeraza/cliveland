@@ -1,6 +1,9 @@
 import React from 'react'
 import './Experience.scss'
 import { useTranslation } from 'react-i18next'
+import Center1 from '../../assets/svg/center1.svg'
+import Center2 from '../../assets/svg/center2.svg'
+import Center3 from '../../assets/svg/center3.svg'
 
 const Experience = () => {
     const { t } = useTranslation()
@@ -18,21 +21,21 @@ const Experience = () => {
                             <div className="expert__cards">
                                 <div className="expert__card">
                                     <div className="expert__card-img">
-                                        <img src="./center1.svg" alt="" />
+                                        <img src={Center1} alt="" />
                                     </div>
                                     <h4>{t('components.experience.cards.treatment.title')}</h4>
                                     <p>{t('components.experience.cards.treatment.description')}</p>
                                 </div>
                                 <div className="expert__card">
                                     <div className="expert__card-img">
-                                        <img src="./center2.svg" alt="" />
+                                        <img src={Center2} alt="" />
                                     </div>
                                     <h4>{t('components.experience.cards.education.title')}</h4>
                                     <p>{t('components.experience.cards.education.description')}</p>
                                 </div>
                                 <div className="expert__card">
                                     <div className="expert__card-img">
-                                        <img src="./center3.svg" alt="" />
+                                        <img src={Center3} alt="" />
                                     </div>
                                     <h4>{t('components.experience.cards.research.title')}</h4>
                                     <p>{t('components.experience.cards.research.description')}</p>

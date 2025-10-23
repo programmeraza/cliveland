@@ -3,6 +3,7 @@ import "./List.scss";
 import { useNavigate } from "react-router-dom";
 import ModalForm from "../ModalForm/ModalForm";
 import { useTranslation } from 'react-i18next';
+import Partner from '../../assets/img/parner.png'
 
 const List = () => {
   const { t } = useTranslation();
@@ -94,7 +95,7 @@ const List = () => {
                   </svg>
                 </button>
 
-                <img src="./parner.png" alt="partner" />
+                <img src={Partner} alt="partner" />
               </div>
 
               <div className="list__departments">

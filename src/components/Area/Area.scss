@@ -23,6 +23,16 @@
         padding: 48px 32px;
         width: 100%;
         max-width: 410px;
+
+        // @media (max-width: 768px) {
+        //     padding: ;
+        // }
+
+        p {
+            color: #555555;
+            line-height: 28px;
+            font-size: 18px;
+        }
     }
 
     &__title1 {

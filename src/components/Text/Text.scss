@@ -2,10 +2,12 @@
     padding: 0 0 160px 0;
     &__wrapper {
         text-align: center;
-        padding: 0 55px;
         p {
             color: #555555;
             font-size: clamp(1.25rem, 1.146rem + 0.44vw, 1.5rem);
         }
+    }
+    @media (max-width: 768px) {
+        padding:  0 0 100px 0;
     }
 }

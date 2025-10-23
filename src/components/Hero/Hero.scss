@@ -2,8 +2,8 @@
 
 .hero {
     position: relative;
-    width: calc(100% - 40px); 
-    margin: 115px auto 160px auto;
+    width: calc(100% - 32px); 
+    margin: 95px auto 160px auto;
     border-radius: 10px;
     overflow: hidden; 
     height: 650px;
@@ -12,7 +12,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url(../../../public/gospital.png);
+        background-image: url(../../assets/img/gospital.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

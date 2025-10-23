@@ -1,26 +1,29 @@
-// Video.jsx
 import React, { useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import { Play } from "lucide-react";
 import "./Video.scss";
 
-const Video = ({ url = "./video.mp4", poster = "./video.png" }) => {
+// ✅ Импорт из assets
+import videoFile from "../../assets/video/video.mp4";
+import posterImage from "../../assets/img/video.png";
+
+const Video = () => {
   const [playing, setPlaying] = useState(false);
   const playerRef = useRef(null);
 
   const togglePlay = () => setPlaying(!playing);
 
   return (
-      <div className="container">
-    <div className="video-wrapper">
+    <div className="container">
+      <div className="video-wrapper" onClick={togglePlay}>
         <ReactPlayer
           ref={playerRef}
-          src={url}
-          controls={playing}
+          url={videoFile}        // ✅ теперь ссылка на импортированный файл
+          playing={playing}
+          controls
           width="100%"
           height="100%"
-          light={!playing ? poster : false}
-          onClick={togglePlay}
+          light={!playing ? posterImage : false} // ✅ постер из assets
         />
       </div>
     </div>
@@ -28,3 +31,4 @@ const Video = ({ url = "./video.mp4", poster = "./video.png" }) => {
 };
 
 export default Video;
+

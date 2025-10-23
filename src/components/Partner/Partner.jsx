@@ -2,6 +2,7 @@ import React from 'react'
 import './Partner.scss'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Water from '../../assets/img/water.png'
 
 const Partner = () => {
   const { t } = useTranslation()
@@ -26,7 +27,7 @@ const Partner = () => {
                         </button>
                     </Link>
                 </div>
-                <img src="./water.png" alt="" />
+                <img src={Water} alt="" />
             </div>
         </div>
       </div>
