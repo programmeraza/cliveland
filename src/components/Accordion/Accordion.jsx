@@ -11,7 +11,7 @@ import ArrowDown from '../../assets/svg/arrow.svg'
 
 export default function Accordion() {
   const { t } = useTranslation();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(0);
 
   const steps = [
     {

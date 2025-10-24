@@ -86,7 +86,7 @@
     background-color: #FBFBFB;
 
     svg {
-        width: 50px;
+        width: 30px;
         height: 20px;
         display: flex;
         align-items: center;
@@ -145,7 +145,7 @@
         appearance: none; 
         -webkit-appearance: none;
         -moz-appearance: none;
-        background: url("../../../public/arrow-select.svg") no-repeat right 18px center;
+        background: url("../../assets/svg/arrow-select.svg") no-repeat right 18px center;
         padding: 10px 18px 10px 10px;
         background-size: 12px;
         cursor: pointer;
@@ -324,4 +324,45 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+}
+
+/* ===== Верификация и состояния полей ===== */
+
+/* Подсветка ошибок */
+.input-error,
+.select-error {
+  border-color: #e74c3c !important;
+  background-color: #fff6f6;
+}
+
+/* Подсветка успешного ввода */
+.input-success {
+  border-color: #2ecc71 !important;
+  background-color: #f6fff8;
+}
+
+/* Анимация при ошибке (легкое потряхивание) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
+/* Сообщения об ошибке под каждым полем */
+.field-error {
+  font-size: 13px;
+  color: #e74c3c;
+  margin-top: -6px;
+  margin-bottom: -4px;
+}
+
+/* Для обязательных меток */
+.modal-field label::after {
+  content: "*";
+  color: #e74c3c;
+  margin-left: 3px;
 }

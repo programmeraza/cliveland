@@ -1,13 +1,13 @@
 .scrollToTop {
     position: fixed;
-    bottom: 100px;
-    right: 50px;
+    bottom: 30px;
+    right: 30px;
     background-color: #007839;
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
     font-size: 25px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -16,6 +16,12 @@
     &:hover {
         background-color: #005f2a;
         transform: translateY(-4px);
+    }
+
+    @media (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
     }
 
     @media (max-width: 425px) {

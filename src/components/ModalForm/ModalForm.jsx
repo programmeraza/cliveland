@@ -9,7 +9,7 @@ const ModalForm = ({ isOpen, onClose }) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [error, setError] = useState("");
   const [fileName, setFileName] = useState("");
-  const location = useLocation(); // <-- определяем текущий путь
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     vacancy: "",
@@ -24,12 +24,15 @@ const ModalForm = ({ isOpen, onClose }) => {
     agree: false,
   });
 
+  const [touched, setTouched] = useState({});
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+    setTouched((prev) => ({ ...prev, [name]: true }));
   };
 
   const handleFileChange = (e) => {
@@ -41,6 +44,7 @@ const ModalForm = ({ isOpen, onClose }) => {
       setFormData((prev) => ({ ...prev, resume: null }));
       setFileName("");
     }
+    setTouched((prev) => ({ ...prev, resume: true }));
   };
 
   useEffect(() => {
@@ -55,19 +59,28 @@ const ModalForm = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      (!formData.vacancy && location.pathname !== "/vacancy") || // <-- если не на /vacancy, то vacancy обязателен
-      !formData.resume ||
-      !formData.name ||
-      !formData.surname ||
-      !formData.phone ||
-      !formData.email ||
-      !formData.country ||
-      !formData.education ||
-      !formData.interest ||
-      !formData.agree
-    ) {
+    const requiredFields = [
+      "resume",
+      "name",
+      "surname",
+      "phone",
+      "email",
+      "country",
+      "education",
+      "interest",
+    ];
+
+    if (location.pathname !== "/vacancy") {
+      requiredFields.push("vacancy");
+    }
+
+    const hasError = requiredFields.some((field) => !formData[field]);
+
+    if (hasError || !formData.agree) {
       setError(t("modal.form.error"));
+      setTouched(
+        requiredFields.reduce((acc, field) => ({ ...acc, [field]: true }), {})
+      );
       return;
     }
 
@@ -79,6 +92,8 @@ const ModalForm = ({ isOpen, onClose }) => {
     setShowSuccessModal(false);
     onClose();
   };
+
+  const isInvalid = (field) => touched[field] && !formData[field];
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -92,27 +107,28 @@ const ModalForm = ({ isOpen, onClose }) => {
 
         <div className="modal-description">
           <div className="modal-text">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12ZM12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289C12.8946 7.48043 13 7.73478 13 8V13C13 13.2652 12.8946 13.5196 12.7071 13.7071C12.5196 13.8946 12.2652 14 12 14C11.7348 14 11.4804 13.8946 11.2929 13.7071C11.1054 13.5196 11 13.2652 11 13V8C11 7.73478 11.1054 7.48043 11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7ZM11 16C11 15.7348 11.1054 15.4804 11.2929 15.2929C11.4804 15.1054 11.7348 15 12 15H12.008C12.2732 15 12.5276 15.1054 12.7151 15.2929C12.9026 15.4804 13.008 15.7348 13.008 16C13.008 16.2652 12.9026 16.5196 12.7151 16.7071C12.5276 16.8946 12.2732 17 12.008 17H12C11.7348 17 11.4804 16.8946 11.2929 16.7071C11.1054 16.5196 11 16.2652 11 16Z"
-                fill="#505050"
-              />
-            </svg>
+            <div className="modal-text-svg">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12ZM12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289C12.8946 7.48043 13 7.73478 13 8V13C13 13.2652 12.8946 13.5196 12.7071 13.7071C12.5196 13.8946 12.2652 14 12 14C11.7348 14 11.4804 13.8946 11.2929 13.7071C11.1054 13.5196 11 13.2652 11 13V8C11 7.73478 11.1054 7.48043 11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7ZM11 16C11 15.7348 11.1054 15.4804 11.2929 15.2929C11.4804 15.1054 11.7348 15 12 15H12.008C12.2732 15 12.5276 15.1054 12.7151 15.2929C12.9026 15.4804 13.008 15.7348 13.008 16C13.008 16.2652 12.9026 16.5196 12.7151 16.7071C12.5276 16.8946 12.2732 17 12.008 17H12C11.7348 17 11.4804 16.8946 11.2929 16.7071C11.1054 16.5196 11 16.2652 11 16Z"
+                  fill="#505050"
+                />
+              </svg>
+            </div>
             <p>{t("modal.description.info")}</p>
           </div>
           <p>{t("modal.description.details")}</p>
         </div>
 
-        <form className="modal-form" onSubmit={handleSubmit}>
-          {/* Показываем select только если НЕ на /vacancy */}
+        <form className="modal-form" onSubmit={handleSubmit} noValidate>
           {location.pathname !== "/vacancy" && (
             <div className="modal-field">
               <label>{t("modal.form.vacancy")}</label>
@@ -120,6 +136,7 @@ const ModalForm = ({ isOpen, onClose }) => {
                 name="vacancy"
                 value={formData.vacancy}
                 onChange={handleInputChange}
+                className={isInvalid("vacancy") ? "select-error shake" : ""}
               >
                 <option value="">
                   {t("modal.form.vacancyPlaceholder")}
@@ -131,12 +148,19 @@ const ModalForm = ({ isOpen, onClose }) => {
                 <option>{t("modal.vacancies.dermatologist")}</option>
                 <option>{t("modal.vacancies.neurologist")}</option>
               </select>
+              {isInvalid("vacancy") && (
+                <p className="field-error">{t("modal.form.errorField")}</p>
+              )}
             </div>
           )}
 
           <div className="modal-field-file">
             <label>{t("modal.form.resume")}</label>
-            <div className="file-upload">
+            <div
+              className={`file-upload ${
+                isInvalid("resume") ? "input-error shake" : ""
+              }`}
+            >
               <input
                 type="file"
                 id="resume"
@@ -151,93 +175,78 @@ const ModalForm = ({ isOpen, onClose }) => {
                 {!fileName && <p>{t("modal.form.resumeSize")}</p>}
               </div>
             </div>
+            {isInvalid("resume") && (
+              <p className="field-error">{t("modal.form.errorFile")}</p>
+            )}
           </div>
 
           <div className="modal-grid">
-            <div className="modal-field">
-              <label>{t("modal.form.name")}</label>
-              <input
-                name="name"
-                type="text"
-                placeholder={t("modal.form.namePlaceholder")}
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="modal-field">
-              <label>{t("modal.form.surname")}</label>
-              <input
-                name="surname"
-                type="text"
-                placeholder={t("modal.form.surnamePlaceholder")}
-                value={formData.surname}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="modal-field">
-              <label>{t("modal.form.phone")}</label>
-              <input
-                name="phone"
-                type="tel"
-                placeholder={t("modal.form.phonePlaceholder")}
-                value={formData.phone}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="modal-field">
-              <label>{t("modal.form.email")}</label>
-              <input
-                name="email"
-                type="email"
-                placeholder={t("modal.form.emailPlaceholder")}
-                value={formData.email}
-                onChange={handleInputChange}
-              />
-            </div>
+            {["name", "surname", "phone", "email"].map((field) => (
+              <div key={field} className="modal-field">
+                <label>{t(`modal.form.${field}`)}</label>
+                <input
+                  name={field}
+                  type={
+                    field === "email"
+                      ? "email"
+                      : field === "phone"
+                      ? "tel"
+                      : "text"
+                  }
+                  placeholder={t(`modal.form.${field}Placeholder`)}
+                  value={formData[field]}
+                  onChange={handleInputChange}
+                  className={isInvalid(field) ? "input-error shake" : ""}
+                />
+                {isInvalid(field) && (
+                  <p className="field-error">{t("modal.form.errorField")}</p>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="modal-field">
-            <label>{t("modal.form.country")}</label>
-            <input
-              name="country"
-              type="text"
-              placeholder={t("modal.form.countryPlaceholder")}
-              value={formData.country}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="modal-field">
-            <label>{t("modal.form.education")}</label>
-            <select
-              name="education"
-              value={formData.education}
-              onChange={handleInputChange}
-            >
-              <option value="">
-                {t("modal.form.educationPlaceholder")}
-              </option>
-              <option>{t("modal.education.bachelor")}</option>
-              <option>{t("modal.education.master")}</option>
-              <option>{t("modal.education.doctorate")}</option>
-            </select>
-          </div>
-
-          <div className="modal-field">
-            <label>{t("modal.form.interests")}</label>
-            <select
-              name="interest"
-              value={formData.interest}
-              onChange={handleInputChange}
-            >
-              <option value="">
-                {t("modal.form.interestsPlaceholder")}
-              </option>
-              <option>{t("modal.interests.football")}</option>
-              <option>{t("modal.interests.chess")}</option>
-              <option>{t("modal.interests.drawing")}</option>
-            </select>
-          </div>
+          {["country", "education", "interest"].map((field) => (
+            <div key={field} className="modal-field">
+              <label>{t(`modal.form.${field}`)}</label>
+              {field === "country" ? (
+                <input
+                  name={field}
+                  type="text"
+                  placeholder={t(`modal.form.${field}Placeholder`)}
+                  value={formData[field]}
+                  onChange={handleInputChange}
+                  className={isInvalid(field) ? "input-error shake" : ""}
+                />
+              ) : (
+                <select
+                  name={field}
+                  value={formData[field]}
+                  onChange={handleInputChange}
+                  className={isInvalid(field) ? "select-error shake" : ""}
+                >
+                  <option value="">
+                    {t(`modal.form.${field}Placeholder`)}
+                  </option>
+                  {field === "education" ? (
+                    <>
+                      <option>{t("modal.education.bachelor")}</option>
+                      <option>{t("modal.education.master")}</option>
+                      <option>{t("modal.education.doctorate")}</option>
+                    </>
+                  ) : (
+                    <>
+                      <option>{t("modal.interests.football")}</option>
+                      <option>{t("modal.interests.chess")}</option>
+                      <option>{t("modal.interests.drawing")}</option>
+                    </>
+                  )}
+                </select>
+              )}
+              {isInvalid(field) && (
+                <p className="field-error">{t("modal.form.errorField")}</p>
+              )}
+            </div>
+          ))}
 
           <div className="modal-checkbox">
             <input
