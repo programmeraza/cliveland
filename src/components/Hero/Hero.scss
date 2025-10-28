@@ -1,11 +1,8 @@
-
-
 .hero {
     position: relative;
-    width: calc(100% - 32px); 
+    width: calc(100% - 32px);
     margin: 95px auto 160px auto;
     border-radius: 10px;
-    overflow: hidden; 
     height: 650px;
 
     &::before {
@@ -17,6 +14,8 @@
         background-position: center;
         background-size: cover;
         z-index: 0;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     &__wrapper {
@@ -56,7 +55,7 @@
 
         @media (max-width: 768px) {
             gap: 16px;
-        }   
+        }
     }
 
     &__inp-flex {
@@ -111,21 +110,45 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #007839;
             z-index: 10;
-            max-height: 220px;
+            max-height: 288px;
             overflow-y: auto;
-            animation: fadeIn 0.2s ease;
+            animation: fadeIn 0.5s ease;
+            scrollbar-width: thin;
+            scrollbar-color: #00783aef #f5f5f5;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+                background-color: #00592b;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #00592b;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #007839;
+                border-radius: 10px;
+                transition: background-color 0.3s ease;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #00592b;
+            }
+
 
             &-item {
                 padding: 12px 15px;
                 font-size: 16px;
                 color: #333;
                 cursor: pointer;
-                transition: 0.2s;
+                transition: 0.5s;
 
                 &:hover {
                     background: #f2f4ff;
-                    color: #4251aa;
+                    color: #007839;
                 }
 
                 &.hero__dropdown-empty {
@@ -141,14 +164,14 @@
         }
     }
 
-    
+
 
     &__btn {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 7px;
-        width: 128px;   
+        width: 128px;
         padding: 15px 27px;
         background-color: #007839;
         border: 1px solid #007839;
@@ -191,4 +214,3 @@
         }
     }
 }
-

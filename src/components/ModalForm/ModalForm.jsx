@@ -10,6 +10,7 @@ const ModalForm = ({ isOpen, onClose }) => {
   const [error, setError] = useState("");
   const [fileName, setFileName] = useState("");
   const location = useLocation();
+  const [previewUrl, setPreviewUrl] = useState("");
 
   const [formData, setFormData] = useState({
     vacancy: "",
@@ -40,12 +41,21 @@ const ModalForm = ({ isOpen, onClose }) => {
     if (file) {
       setFormData((prev) => ({ ...prev, resume: file }));
       setFileName(file.name);
+
+      if (file.type.startsWith("image/")) {
+        const imageUrl = URL.createObjectURL(file);
+        setPreviewUrl(imageUrl);
+      } else {
+        setPreviewUrl("");
+      }
     } else {
       setFormData((prev) => ({ ...prev, resume: null }));
       setFileName("");
+      setPreviewUrl("");
     }
     setTouched((prev) => ({ ...prev, resume: true }));
   };
+
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -128,6 +138,8 @@ const ModalForm = ({ isOpen, onClose }) => {
           <p>{t("modal.description.details")}</p>
         </div>
 
+        <h3 className="modal-title2">{t("modal.title2")}</h3>
+
         <form className="modal-form" onSubmit={handleSubmit} noValidate>
           {location.pathname !== "/vacancy" && (
             <div className="modal-field">
@@ -157,9 +169,8 @@ const ModalForm = ({ isOpen, onClose }) => {
           <div className="modal-field-file">
             <label>{t("modal.form.resume")}</label>
             <div
-              className={`file-upload ${
-                isInvalid("resume") ? "input-error shake" : ""
-              }`}
+              className={`file-upload ${isInvalid("resume") ? "input-error shake" : ""
+                }`}
             >
               <input
                 type="file"
@@ -169,11 +180,26 @@ const ModalForm = ({ isOpen, onClose }) => {
                 onChange={handleFileChange}
               />
               <div className="file-upload__content">
-                <strong>
-                  {fileName ? fileName : t("modal.form.resumeUpload")}
-                </strong>
-                {!fileName && <p>{t("modal.form.resumeSize")}</p>}
+                {previewUrl ? (
+                  <div className="file-preview">
+                    <img src={previewUrl} alt="preview" className="file-preview__image" />
+                    <p className="file-preview__name">{fileName}</p>
+                  </div>
+                ) : fileName ? (
+                  <div className="file-preview">
+                    <div className="file-preview__icon">
+                      📄
+                    </div>
+                    <p className="file-preview__name">{fileName}</p>
+                  </div>
+                ) : (
+                  <>
+                    <strong>{t("modal.form.resumeUpload")}</strong>
+                    <p>{t("modal.form.resumeSize")}</p>
+                  </>
+                )}
               </div>
+
             </div>
             {isInvalid("resume") && (
               <p className="field-error">{t("modal.form.errorFile")}</p>
@@ -190,8 +216,8 @@ const ModalForm = ({ isOpen, onClose }) => {
                     field === "email"
                       ? "email"
                       : field === "phone"
-                      ? "tel"
-                      : "text"
+                        ? "tel"
+                        : "text"
                   }
                   placeholder={t(`modal.form.${field}Placeholder`)}
                   value={formData[field]}
@@ -205,7 +231,7 @@ const ModalForm = ({ isOpen, onClose }) => {
             ))}
           </div>
 
-          {["country", "education", "interest"].map((field) => (
+          {["country", "education", "interests"].map((field) => (
             <div key={field} className="modal-field">
               <label>{t(`modal.form.${field}`)}</label>
               {field === "country" ? (
@@ -265,9 +291,11 @@ const ModalForm = ({ isOpen, onClose }) => {
 
           {error && <p className="modal-error">{error}</p>}
 
-          <button type="submit" className="modal-submit">
-            {t("modal.form.submit")}
-          </button>
+          <div className="modal-submit-wrapper">
+            <button type="submit" className="modal-submit">
+              {t("modal.form.submit")}
+            </button>
+          </div>
         </form>
 
         {showSuccessModal && (
