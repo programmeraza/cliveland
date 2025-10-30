@@ -39,3 +39,17 @@
         }
     }
 }
+
+.home__block {
+    display: block;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.home__none {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+    }
+}

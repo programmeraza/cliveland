@@ -1,4 +1,11 @@
-/* Video.scss */
+
+.video {
+  padding: 0 0 160px 0;
+  @media (max-width: 768px) {
+    padding: 0 0 100px 0;
+  }
+}
+
 .video-wrapper {
   position: relative;
   width: 100%;

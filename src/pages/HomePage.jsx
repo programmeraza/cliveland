@@ -19,22 +19,27 @@ import Up from '../components/Up/Up'
 const HomePage = () => {
   return (
     <>
-      <Header/>
-      <Hero/>
-      <Video/>
-      <LogoFlex/>
-      <Clinic/>
-      <Mission/>
-      <Text/>
-      <Area/>
-      <Partner/>
-      <Experience/>
-      <Our/>
-      <List/>
-      <Accordion/>
-      <Contact/>
-      <Footer/>
-      <Up/>
+      <Header />
+      <Hero />
+      <Video />
+      <div className="home__block">
+        <LogoFlex />
+      </div>
+      <Clinic />
+      <Mission />
+      <Text />
+      <Area />
+      <Partner />
+      <Experience />
+      <Our />
+      <List />
+      <Accordion />
+      <div className="home__none">
+        <LogoFlex />
+      </div>
+      <Contact />
+      <Footer />
+      <Up />
     </>
   )
 }
