@@ -23,14 +23,12 @@ const ChevronPage = () => {
 
   return (
     <>
-      <Header />
       <Branch
         title={branchTitle}
         description={branchDescription}
         backgroundImage={defaultBackground}
       />
       <Position selectedDepartment={selectedDepartment}  apiCategory={apiCategory} />
-      <Footer />
       <Up />
     </>
   );

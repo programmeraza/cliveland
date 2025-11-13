@@ -17,6 +17,9 @@
             font-size: 44px;
             color: #000;
             width: 100%;
+            @media (max-width: 768px) {
+                font-size: 32px;
+            }
         }
         p {
             font-size: 20px;

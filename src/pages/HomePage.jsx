@@ -19,7 +19,6 @@ import Up from '../components/Up/Up'
 const HomePage = () => {
   return (
     <>
-      <Header />
       <Hero />
       <Video />
       <div className="home__block">
@@ -38,7 +37,6 @@ const HomePage = () => {
         <LogoFlex />
       </div>
       <Contact />
-      <Footer />
       <Up />
     </>
   )

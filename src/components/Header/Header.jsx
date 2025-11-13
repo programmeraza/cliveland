@@ -58,18 +58,24 @@ const Header = () => {
                                 </ul>
                             )}
 
-                            <button className="header__burger" onClick={toggleMenu}>
-                                {menuOpen ? <IoCloseOutline /> : <FiMenu />}
+                            <button
+                                className={`header__burger ${menuOpen ? 'active' : ''}`}
+                                onClick={toggleMenu}
+                            >
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </button>
+
 
                             <div className={`header__menu ${menuOpen ? 'active' : ''}`}>
                                 <div className="header__menu-top">
-                                    <Link to={'/'}>
+                                    {/* <Link to={'/'}>
                                         <img src={LogoHeader} alt="logo" />
-                                    </Link>
-                                    <button className="header__menu-close" onClick={closeMenu}>
+                                    </Link> */}
+                                    {/* <button className="header__menu-close" onClick={closeMenu}>
                                         <IoCloseOutline />
-                                    </button>
+                                    </button> */}
                                 </div>
                                 <ul className="header__menu-list">
                                     {!isVacancyPage && (

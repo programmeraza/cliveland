@@ -11,7 +11,6 @@ const PolicyPage = () => {
 
   return (
     <>
-      <Header />
       <div className="policy">
         <div className="container">
           <div className="policy__wrapper">
@@ -25,7 +24,6 @@ const PolicyPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   )
 }

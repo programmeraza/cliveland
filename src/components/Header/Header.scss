@@ -1,164 +1,179 @@
 .header {
-    padding: 16px 0;
-    background-color: #fff;
-    position: fixed;
+  padding: 16px 0;
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000; // чтобы всё в хедере было выше меню
+  top: 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    z-index: 10;
+    gap: 10px;
+
+    img {
+      width: 100%;
+      max-width: 200px;
+      cursor: pointer;
+      position: relative;
+      z-index: 12; // логотип поверх меню
+
+      @media (max-width: 768px) {
+        max-width: 150px;
+      }
+    }
+  }
+
+  &__nav-flex {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    a {
+      color: #1E1E1E;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1190px) {
+      display: none;
+    }
+  }
+
+  &__btn-flex {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  // 🔹 Новый красивый бургер с анимацией
+  &__burger {
+    display: none;
+
+    @media (max-width: 1190px) {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      z-index: 12; // поверх меню
+      padding: 10px;
+
+      span {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 2px;
+        transition: all 0.4s ease;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -7px);
+        }
+      }
+    }
+  }
+
+
+  &__menu {
+    position: fixed;
     top: 0;
+    right: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 32px 16px;
 
-    &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        gap: 10px;
-
-        img {
-            width: 100%;
-            max-width: 466px;
-            cursor: pointer;
-
-            @media (max-width: 768px) {
-                max-width: 300px;
-            }
-        }
+    &.active {
+      transform: translateX(0);
     }
 
-    &__nav-flex {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: 24px;
+    @media (min-width: 1190px) {
+      display: none !important;
     }
+  }
 
-    &__ul {
-        display: flex;
-        align-items: center;
-        gap: 32px;
+  &__menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-        a {
-            color: #1E1E1E;
-            font-size: 16px;
-        }
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+    margin-top: 60px;
 
-        @media (max-width: 1190px) {
-            display: none;
-        }
+    a {
+      color: #1E1E1E;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;
     }
+  }
 
-    &__btn-flex {
-        display: flex;
-        align-items: center;
-        gap: 8px;
+  &__menu-list-btn {
+    width: 200px;
+    padding: 14px 0;
+    background-color: #006DB3;
+    color: #fff;
+    border: 1px solid #006DB3;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
 
-        @media (max-width: 768px) {
-            display: none;
-        }
+    &:hover {
+      background-color: transparent;
+      color: #006DB3;
     }
+  }
 
-    &__burger {
-        display: none;
+  &__btn {
+    padding: 14px 15px;
+    border: 1px solid #007839;
+    background-color: #007839;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    cursor: pointer;
 
-        @media (max-width: 1190px) {
-            display: block;
-            background-color: transparent;
-            color: #00332A;
-            font-size: 32px;
-            border: none;
-            outline: none;
-            padding-top: 5px;
-            cursor: pointer;
-        }
+    &:hover {
+      background-color: transparent;
+      color: #007839;
     }
-
-    &__menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100dvh;
-        background-color: #fff;
-        transform: translateX(100%);
-        opacity: 0;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        overflow-y: auto;
-
-        &.active {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        @media (min-width: 1190px) {
-            display: none !important;
-        }
-    }
-
-    &__menu-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 32px 16px;
-    }
-
-    &__menu-list {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 24px;
-        padding: 120px 16px 40px 16px;
-
-        a {
-            color: #1E1E1E;
-            font-size: 20px;
-            font-weight: 500;
-        }
-    }
-
-    &__menu-list-btn {
-        width: 358px;
-        padding: 14.5px 0;
-        background-color: #006DB3;
-        color: #fff;
-        border: 1px solid #006DB3;
-        border-radius: 5px;
-        transition: all .5s ease;
-        font-size: 16px;
-        cursor: pointer;
-        &:hover {
-            background-color: transparent;
-            color: #006DB3;
-        }
-    }
-
-    &__menu-close {
-        background-color: transparent;
-        color: #00332A;
-        font-size: 32px;
-        border: none;
-        outline: none;
-        padding-top: 5px;
-    }
-
-    &__btn {
-        width: max-content;
-        padding: 14px 15px;
-        border: 1px solid #007839;
-        background-color: #007839;
-        color: #fff;
-        font-size: 16px;
-        border-radius: 4px;
-        transition: all .5s ease;
-        cursor: pointer;
-
-        &:hover {
-            background-color: transparent;
-            color: #007839;
-        }
-    }
+  }
 }
